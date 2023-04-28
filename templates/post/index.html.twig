@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block body %}
+
+
+    {% for post in posts %}
+
+        <hr>
+        <div class="container">
+            <h1>{{ post.title }}</h1>
+            <p><strong>{{ post.content }}</strong></p>
+            <p>créé le {{ post.createdAt |date("d/m/Y") }}</p>
+        </div>
+        <a href="{{ path('app_postapp_show',{id:post.id}) }}" class="btn btn-secondary">Montrer le post</a>
+
+        <hr>
+    {% endfor %}
+
+
+{% endblock %}

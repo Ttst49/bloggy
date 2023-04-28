@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}create Post{% endblock %}
+
+{% block body %}
+
+    {{ form_start(formPost) }}
+
+    {{ form_row(formPost.title) }}
+    {{ form_row(formPost.content) }}
+
+    <button type="submit" class="btn btn-success">Go</button>
+
+    {{ form_end(formPost) }}
+
+{% endblock %}

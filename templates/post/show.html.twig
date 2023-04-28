@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('app_postapp_index') }}" class="btn btn-light">Retour aux posts</a>
+
+
+        <hr>
+        <div class="container">
+            <h1>{{ post.title }}</h1>
+            <p><strong>{{ post.content }}</strong></p>
+            <p>créé le {{ post.createdAt |date("d/m/Y") }}</p>
+        </div>
+    <a href="{{ path('app_postapp_edit',{id:post.id}) }}" class="btn btn-warning">Edit</a>
+    <a href="{{ path('app_postapp_delete',{id:post.id}) }}" class="btn btn-danger">Supprimer</a>
+
+        <hr>
+
+{% endblock %}
