@@ -17,5 +17,22 @@
     <a href="{{ path('app_postapp_delete',{id:post.id}) }}" class="btn btn-danger">Supprimer</a>
 
         <hr>
+    {% for comment in post.comments %}
+
+        {% if(comment) %}
+
+        <hr>
+        <div class="container">
+            <p><strong>{{ comment.content }}</strong></p>
+            <p>créé le {{ comment.createdAt |date("d/m/Y") }}</p>
+        </div>
+        <hr>
+
+        {% endif %}
+        {% else %}
+        <h2>Pas de commentaire...</h2>
+    {% endfor %}
+
+
 
 {% endblock %}
